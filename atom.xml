@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Blanca</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-26T08:45:39.294Z</updated>
+  <updated>2020-07-15T17:13:41.699Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2020/07/26/hello-world/"/>
-    <id>http://yoursite.com/2020/07/26/hello-world/</id>
-    <published>2020-07-26T08:45:39.294Z</published>
-    <updated>2020-07-26T08:45:39.294Z</updated>
+    <title>python基础</title>
+    <link href="http://yoursite.com/2020/07/27/python%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/2020/07/27/python%E5%9F%BA%E7%A1%80/</id>
+    <published>2020-07-27T06:32:36.702Z</published>
+    <updated>2020-07-15T17:13:41.699Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;h3 id=&quot;标识符&quot;&gt;&lt;a href=&quot;#标识符&quot; class=&quot;headerlink&quot;
         
       
     
