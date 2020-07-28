@@ -99,6 +99,499 @@
     
     
     <article
+  id="post-HTTP协议"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/07/27/HTTP%E5%8D%8F%E8%AE%AE/"
+    >HTTP协议</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/07/27/HTTP%E5%8D%8F%E8%AE%AE/" class="article-date">
+  <time datetime="2020-07-27T10:31:35.916Z" itemprop="datePublished">2020-07-27</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h2 id="HTTP协议类"><a href="#HTTP协议类" class="headerlink" title="HTTP协议类"></a>HTTP协议类</h2><h3 id="HTTP协议的主要特点"><a href="#HTTP协议的主要特点" class="headerlink" title="HTTP协议的主要特点"></a>HTTP协议的主要特点</h3><blockquote>
+<p><strong>1.支持客户/服务器模式</strong>。<br><strong>2.简单快速：</strong>客户向服务器请求知服务时，只需传送请求方法和路径。请求方法常用的有GET、HEAD、POST。每种方法规定了客户与服务器联系的类道型不同。<br>由于HTTP协议简单，使得HTTP服务器的程序规模小，因而通信速度很快。<br><strong>3.灵活：</strong>HTTP允许传输任意类型的数据对象。正在传输的类型由Content-Type加以标记。<br><strong>4.无连接：</strong>无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。<br><strong>5.无状态：</strong>HTTP协议是<a href="https://www.baidu.com/s?wd=无状态协议&tn=SE_PcZhidaonwhc_ngpagmjz&rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">无状态协议</a>。无状态是指协议对于专事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另属一方面，在服务器不需要先前信息时它的应答就较快。</p>
+</blockquote>
+<h3 id="HTTP报文的组成部分"><a href="#HTTP报文的组成部分" class="headerlink" title="HTTP报文的组成部分"></a>HTTP报文的组成部分</h3><blockquote>
+<p><strong>请求报文</strong></p>
+<p>请求行：包括http方法，页面地址，一些协议，版本</p>
+<p>请求头：一些key value值，告诉服务端要什么内容，要注意什么类型</p>
+<p>空行：过渡请求头到请求体</p>
+<p>请求体：存储数据</p>
+</blockquote>
+<blockquote>
+<p><strong>响应报文</strong>（差不多同上）</p>
+<p>状态行：协议，版本，状态码</p>
+<p>响应头：</p>
+<p>空行</p>
+<p>响应体</p>
+</blockquote>
+<h3 id="HTTP方法"><a href="#HTTP方法" class="headerlink" title="HTTP方法"></a>HTTP方法</h3><blockquote>
+<p>GET:：获取资源</p>
+<p>POST：传输资源</p>
+<p>PUT：更新资源</p>
+<p>DELETE：删除资源</p>
+<p>HEAD：获取报文首部</p>
+</blockquote>
+<h3 id="POST和GET的区别"><a href="#POST和GET的区别" class="headerlink" title="POST和GET的区别"></a>POST和GET的区别</h3><blockquote>
+<p><strong>GET在浏览器回退时是无害的，而POST会再次提交请求</strong></p>
+<p>GET产生的URL地址可以被收藏，而POST不可以</p>
+<p><strong>GET请求会被浏览器主动缓存，而POST不会，除非手动设置</strong></p>
+<p>GET请求只能进行URL编码，而POST支持多种编码方法</p>
+<p><strong>GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留</strong></p>
+<p><strong>GET请求在URL中传送的参数是有长度限制的，而POST没有限制</strong></p>
+<p>对参数的数据类型，GET只接受ASCLL字符，而POST没有限制</p>
+<p>GET比POST更不安全，因为参数直接暴露在URL上，所以不能用来传输敏感信息</p>
+<p><strong>GET参数通过URL传递，POST放在Request body中</strong></p>
+</blockquote>
+<h3 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h3><blockquote>
+<p>1xx：指示信息 - 表示请求已接受，继续处理</p>
+<p>2xx：成功 - 表示请求已被成功接收</p>
+<p>3xx：重定向 - 要完成请求必须进行更进一步的操作</p>
+<p>4xx：客户端错误 - 请求有语法错误或请去无法实现</p>
+<p>5xx：服务器错误 - 服务器未能实现合法的请求</p>
+</blockquote>
+<p><img src="C:%5CUsers%5CCasablanca%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200523223708270.png" alt="image-20200523223708270"></p>
+<p><img src="C:%5CUsers%5CCasablanca%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200523223758585.png" alt="image-20200523223758585"></p>
+<h3 id="什么是持久连接"><a href="#什么是持久连接" class="headerlink" title="什么是持久连接"></a>什么是持久连接</h3><blockquote>
+<p>版本HTTP/1.1</p>
+<p>HTTP协议采用“请求 - 应答”模式，当使用普通模式，既非Keep-Alive模式时，每个请求/应答客户和服务器都要新建一个连接，完成之后立即断开连接（HTTP协议为无连接的协议）</p>
+<p>当使用Keep-Alive模式（又称持久连接，连接重用）时，Keep-Alive功能使客户端到服务器的连接持续有效，当出现对服务器的后续请求时，Keep-Alive功能避免了简历或者重新建立连接</p>
+</blockquote>
+<h3 id="什么是管线化"><a href="#什么是管线化" class="headerlink" title="什么是管线化"></a>什么是管线化</h3><blockquote>
+<p>在使用持久连接的情况下，某个连接上消息的传递类似于</p>
+<p>请求1 -&gt; 响应1 -&gt; 请求2 -&gt; 响应2 -&gt; 请求2 -&gt; 响应2</p>
+</blockquote>
+<blockquote>
+<p>某个连接上的消息变成了类似这样（把请求打包发给服务器，服务器响应内容也打包返回）</p>
+<p>请求1 -&gt; 请求2-&gt;  请求3  -&gt;  响应1 -&gt; 响应2 -&gt; 响应3</p>
+</blockquote>
+<p>​    1.管线化机制通过持久连接完成，仅HTTP/1.1支持此技术 </p>
+<p>　2. 只有GET和HEAD要求可以进行管线化，而POST则有所限制</p>
+<p>　3. 初次创建连接时也不应启动管线机制，因为对方（服务器）不一定支持HTTP/1.1版本的协议。</p>
+<p>​    4.HTTP1.1要求服务器端支持管线化，但并不要求服务器端也对响应进行管线化处理，只是要求对于管线化的请求不失败即可</p>
+<p>​    5.由于上面提到服务器端问题，开启管线化很可能并不会带来大幅度的性能提升，而且现在很多服务器端和代理程序对管线化的支持并不好，现代浏览器Chrome和Firefox默认并未开启管线化支持。</p>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+ 
+</article>
+
+    
+    <article
+  id="post-谈谈CSS盒模型"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/07/27/%E8%B0%88%E8%B0%88CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/"
+    >谈谈CSS盒模型</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/07/27/%E8%B0%88%E8%B0%88CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/" class="article-date">
+  <time datetime="2020-07-27T10:31:05.385Z" itemprop="datePublished">2020-07-27</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h3 id="谈谈你对CSS盒模型的认识"><a href="#谈谈你对CSS盒模型的认识" class="headerlink" title="谈谈你对CSS盒模型的认识"></a>谈谈你对CSS盒模型的认识</h3><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><blockquote>
+<p>有margin，border，padding，content，还分 标准盒模型和IE6盒模型</p>
+</blockquote>
+<h4 id="标准模型和IE模型的区别"><a href="#标准模型和IE模型的区别" class="headerlink" title="标准模型和IE模型的区别"></a>标准模型和IE模型的区别</h4><blockquote>
+<p>宽和高的计算不同，标准盒模型只计算content的宽高，IE6盒模型是计算padding和border的</p>
+</blockquote>
+<h4 id="CSS是如何设置这两种模型的"><a href="#CSS是如何设置这两种模型的" class="headerlink" title="CSS是如何设置这两种模型的"></a>CSS是如何设置这两种模型的</h4><blockquote>
+<p>box-sizing: content-box;</p>
+<p>box-sizing: border-box;</p>
+</blockquote>
+<h4 id="JS如何设置获取盒模型对应的宽和高"><a href="#JS如何设置获取盒模型对应的宽和高" class="headerlink" title="JS如何设置获取盒模型对应的宽和高"></a>JS如何设置获取盒模型对应的宽和高</h4><blockquote>
+<p>dom.style.width/height    (只能取到内联样式)</p>
+<p>dom.currentStyle.width/height    (只有IE)</p>
+<p>window.getComputedStyle(dom).width/height (chrome/firefox)</p>
+<p>dom.getBoundingClientRect().width/height  (能拿到top left width height，一般用来计算dom视图位置)</p>
+</blockquote>
+<h4 id="实例题（根据盒模型解释margin重叠）"><a href="#实例题（根据盒模型解释margin重叠）" class="headerlink" title="实例题（根据盒模型解释margin重叠）"></a>实例题（根据盒模型解释margin重叠）</h4><blockquote>
+<p>y轴方向上的margin会重叠，两者之间取最大值</p>
+</blockquote>
+<h4 id="BFC（边距重叠解决方案）"><a href="#BFC（边距重叠解决方案）" class="headerlink" title="BFC（边距重叠解决方案）"></a>BFC（边距重叠解决方案）</h4><h5 id="BFC的基本概念"><a href="#BFC的基本概念" class="headerlink" title="BFC的基本概念"></a>BFC的基本概念</h5><blockquote>
+<p>块级格式化上下文</p>
+</blockquote>
+<h5 id="BFC的原理"><a href="#BFC的原理" class="headerlink" title="BFC的原理"></a>BFC的原理</h5><blockquote>
+<p>BFC垂直方向上margin重叠（margin塌陷）</p>
+<p>BFC元素不会与浮动元素相重叠</p>
+<p>计算BFC的高度时，浮动元素也参与计算</p>
+<p>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素</p>
+</blockquote>
+<h5 id="如何创建BFC"><a href="#如何创建BFC" class="headerlink" title="如何创建BFC"></a>如何创建BFC</h5><blockquote>
+<p>float属性不为none<br>position不为static和relative<br>overflow不为visible<br>display为inline-block, table-cell, table-caption, flex, inline-flex</p>
+</blockquote>
+<h5 id="BFC的使用场景"><a href="#BFC的使用场景" class="headerlink" title="BFC的使用场景"></a>BFC的使用场景</h5> 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+ 
+</article>
+
+    
+    <article
+  id="post-JavaScript笔记"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/07/27/JavaScript%E7%AC%94%E8%AE%B0/"
+    >JavaScript笔记</a> 
+</h2>
+ 
+
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2020/07/27/JavaScript%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2020-07-27T10:30:44.560Z" itemprop="datePublished">2020-07-27</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h3 id="浏览器组成"><a href="#浏览器组成" class="headerlink" title="浏览器组成"></a>浏览器组成</h3><blockquote>
+<p>1.shell部分<br>2.内核部分<br> 渲染引擎（语法规则和渲染）<br> js引擎<br> 其他模块</p>
+</blockquote>
+<h3 id="主流浏览器"><a href="#主流浏览器" class="headerlink" title="主流浏览器"></a>主流浏览器</h3><table>
+<thead>
+<tr>
+<th>主流浏览器</th>
+<th>内核</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IE</td>
+<td>trident</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>webkit/blink</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>Gecko</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>presto</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>webkit</td>
+</tr>
+</tbody></table>
+<h3 id="原始值–-gt-stack（栈数据）"><a href="#原始值–-gt-stack（栈数据）" class="headerlink" title="原始值–&gt;stack（栈数据）"></a>原始值–&gt;stack（栈数据）</h3><blockquote>
+<p>Number String Boolean undefined null</p>
+</blockquote>
+<h3 id="引用值–-gt-heap（堆数据）"><a href="#引用值–-gt-heap（堆数据）" class="headerlink" title="引用值–&gt;heap（堆数据）"></a>引用值–&gt;heap（堆数据）</h3><blockquote>
+<p>array Object function …date RegExp</p>
+</blockquote>
+<h3 id="预编译前奏"><a href="#预编译前奏" class="headerlink" title="预编译前奏"></a>预编译前奏</h3><blockquote>
+<p>1.imply global 暗示全局变量：即任何变量，如果变量未经声明就赋值，此变量就为全局对象所有。<br>2.一切声明的全局变量，全是window的属性。</p>
+</blockquote>
+<h3 id="预编译"><a href="#预编译" class="headerlink" title="预编译"></a>预编译</h3><blockquote>
+<p>预编译发生在(函数)执行前一刻</p>
+</blockquote>
+<ul>
+<li>四部曲：</li>
+</ul>
+<p>1.创建AO对象（Activation Object）（执行期上下文）<br>2.找形参和变量声明，将变量和形参名作为AO里的属性名，值为undefined<br>3.将实参值和形参统一<br>4.在函数体里找函数声明，值赋予函数体</p>
+<h3 id="运行期上下文"><a href="#运行期上下文" class="headerlink" title="运行期上下文"></a>运行期上下文</h3><blockquote>
+<p> 当函数执行时，会创建一个称为执行期上下文的内部对象。一个执行期上下文定义了一个函数执行时的环境，函数每次执行时对应的执行上下文都是独一无二的，所以多次调用一个函数会导致创建多个执行上下文，当函数执行完毕，执行上下文被销毁。</p>
+</blockquote>
+<h3 id="查找变量"><a href="#查找变量" class="headerlink" title="查找变量"></a>查找变量</h3><blockquote>
+<p>从作用域链的顶端依次向下查找</p>
+</blockquote>
+<h3 id="scope"><a href="#scope" class="headerlink" title="[[scope]]"></a>[[scope]]</h3><blockquote>
+<p>每个javascript函数都是一个对象，对象中有些属性我们可以访问，但有些不可以，这些属性仅供javascript引擎存取，[[scope]]就是其中一个。[[scope]]指的就是我们所说的作用域,其中存储了运行期上下文的集合。</p>
+</blockquote>
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><blockquote>
+<p>[[scope]]中所存储的执行期上下文对象的集合，这个集合呈链式链接，我们把这种链式链接叫做作用域链。</p>
+</blockquote>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><blockquote>
+<p>当内部函数被保存到外部时，将会生成闭包。闭包会导致原有作用域链不释放，造成内存泄露。</p>
+</blockquote>
+<h4 id="闭包的规范"><a href="#闭包的规范" class="headerlink" title="闭包的规范"></a>闭包的规范</h4><blockquote>
+<p>闭包会导致多个执行函数共用一个公有变量，如果不是特殊需要，应尽量防止这种情况发生。</p>
+</blockquote>
+<h4 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h4><blockquote>
+<p>实现公有变量<br>eg:函数累加器<br>可以做缓存<br>eg:eater<br>可以实现封装，属性私有化。<br>eg: Person();</p>
+</blockquote>
+<h3 id="构造函数内部原理"><a href="#构造函数内部原理" class="headerlink" title="构造函数内部原理"></a>构造函数内部原理</h3><blockquote>
+<p>1.在函数体最前面隐式加上this = {}<br>2.执行 this.xxx = xxx；<br>3.隐式的返回this</p>
+</blockquote>
+<h3 id="apply跟call的区别"><a href="#apply跟call的区别" class="headerlink" title="apply跟call的区别"></a>apply跟call的区别</h3><blockquote>
+<p>call(“obj”,参数)</p>
+<p>在于传参列表不同，其他一样，用于改变this指向。</p>
+<p>apply()除了第一位，后面实参传入的形式应为[],即arguments。</p>
+</blockquote>
+<h3 id="圣杯模式-继承模式"><a href="#圣杯模式-继承模式" class="headerlink" title="圣杯模式(继承模式)"></a>圣杯模式(继承模式)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> inherit = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">Target,Origin</span>) </span>&#123;</span><br><span class="line">        F.prototype = Origin.prototype;</span><br><span class="line">        Target.prototype = <span class="keyword">new</span> F();</span><br><span class="line">        Target.prototype.constuctor = Target;</span><br><span class="line">        Target.prototype.uber = Origin.prototype;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;());</span><br></pre></td></tr></table></figure>
+
+<h3 id="关于区别对象和数组的三种方法"><a href="#关于区别对象和数组的三种方法" class="headerlink" title="关于区别对象和数组的三种方法"></a>关于区别对象和数组的三种方法</h3><blockquote>
+<p>第一种是利用constructor不同进行判断</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log([].constructor);<span class="comment">//function Array() &#123;&#125;</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj.constructor);<span class="comment">//function Object() &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>第二种是利用instanceof来区分</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log([] <span class="keyword">instanceof</span> <span class="built_in">Array</span>);<span class="comment">//true</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(obj <span class="keyword">instanceof</span> <span class="built_in">Array</span>);<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>第三种是利用toString.call()来区分</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call([]));<span class="comment">//[object Array]</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(obj));<span class="comment">//[object Object]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="关于this四个方面"><a href="#关于this四个方面" class="headerlink" title="关于this四个方面"></a>关于this四个方面</h3><blockquote>
+<p>1.函数预编译过程 this –&gt; window<br>2.全局作用域里 this –&gt; window<br>3.call/apply 可以改变函数运行时this指向<br>4.obj.func();  func() 里面的 this 指向obj</p>
+</blockquote>
+<h3 id="对对象进行深度克隆"><a href="#对对象进行深度克隆" class="headerlink" title="对对象进行深度克隆"></a>对对象进行深度克隆</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">origin,target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> target = target || &#123;&#125;;<span class="comment">//优化用户，可不传目标对象</span></span><br><span class="line">    <span class="keyword">var</span> toStr = <span class="built_in">Object</span>.prototype.toString;</span><br><span class="line">    <span class="keyword">var</span> arrStr = <span class="string">'[object Array]'</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> prop <span class="keyword">in</span> origin) &#123;<span class="comment">//枚举</span></span><br><span class="line">        <span class="keyword">if</span>(origin.hasOwnProperty(prop)) &#123;<span class="comment">//判断该prop是否属于源对象</span></span><br><span class="line">            <span class="keyword">if</span>(origin[prop] !== <span class="string">'null'</span> &amp;&amp; <span class="keyword">typeof</span>(origin[prop]) == <span class="string">'object'</span>) &#123;<span class="comment">//若prop为null，或类型是对象（引用值），则走递归</span></span><br><span class="line">                target[prop] = toStr.call(origin[prop]) == arrStr ? [] : &#123;&#125;;<span class="comment">//三目运算符，通过toString判断源对象的prop是对象，还是数组，并赋予目标函数的prop</span></span><br><span class="line">                deepClone(origin[prop],target[prop]);<span class="comment">//走递归</span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                target[prop] = origin[prop];<span class="comment">//不是引用值，而是原始值，则直接复制</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> target;<span class="comment">//返回克隆好的目标函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="计算字符串字节大小"><a href="#计算字符串字节大小" class="headerlink" title="计算字符串字节大小"></a>计算字符串字节大小</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">retBytes</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> num = str.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(str.charCodeAt(i) &gt; <span class="number">255</span>)&#123;</span><br><span class="line">            num++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组常用的方法"><a href="#数组常用的方法" class="headerlink" title="数组常用的方法"></a>数组常用的方法</h3><blockquote>
+<p><strong>改变原数组</strong><br>push，pop，shift，unshift，sort，reverse，splice<br><strong>不改变原数组</strong><br>concat，join——&gt;split，toString，slice</p>
+</blockquote>
+<h3 id="类数组"><a href="#类数组" class="headerlink" title="类数组"></a>类数组</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="string">"0"</span> : <span class="string">"a"</span>,</span><br><span class="line">    <span class="string">"1"</span> : <span class="string">"b"</span>,</span><br><span class="line">    <span class="string">"2"</span> : <span class="string">"c"</span>,</span><br><span class="line">    <span class="string">"length"</span> : <span class="number">3</span>,</span><br><span class="line">    <span class="string">"push"</span> : <span class="built_in">Array</span>.prototype.push,</span><br><span class="line">    <span class="string">"splice"</span> : <span class="built_in">Array</span>.prototype.splice</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>];</span><br><span class="line">obj.push(<span class="string">"d"</span>);</span><br><span class="line">arr.push(<span class="string">"d"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(obj);<span class="comment">//Object(4) ["a", "b", "c", "d", push: ƒ, splice: ƒ]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//["a","b","c","d"]</span></span><br><span class="line"><span class="built_in">console</span>.log(obj.length);<span class="comment">//4</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.length);<span class="comment">//4</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="封装一个更详细的typeof"><a href="#封装一个更详细的typeof" class="headerlink" title="封装一个更详细的typeof"></a>封装一个更详细的typeof</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> template = &#123;</span><br><span class="line">        <span class="string">"[object Array]"</span> : <span class="string">"Array"</span>,</span><br><span class="line">        <span class="string">"[object Object]"</span> : <span class="string">"Object"</span>,</span><br><span class="line">        <span class="string">"[object Number]"</span> : <span class="string">"Number - object"</span>,</span><br><span class="line">        <span class="string">"[object Boolean]"</span> : <span class="string">"Boolean - object"</span>,</span><br><span class="line">        <span class="string">"[object String]"</span> : <span class="string">"String - object"</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> ret = <span class="keyword">typeof</span>(target)；</span><br><span class="line">    <span class="keyword">if</span>(target === <span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"null"</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(ret == <span class="string">"object"</span>) &#123;</span><br><span class="line">        <span class="keyword">var</span> str = <span class="built_in">Object</span>.prototype.toString.call(target);</span><br><span class="line">        <span class="keyword">return</span> template[str];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="封装一个给数组去重的方法（原型链上）"><a href="#封装一个给数组去重的方法（原型链上）" class="headerlink" title="封装一个给数组去重的方法（原型链上）"></a>封装一个给数组去重的方法（原型链上）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.unique = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = &#123;&#125;,</span><br><span class="line">        arr = [],</span><br><span class="line">        len = <span class="keyword">this</span>.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++ ) &#123;</span><br><span class="line">        <span class="keyword">if</span>(!temp[<span class="keyword">this</span>.[i]]) &#123;</span><br><span class="line">            temp[<span class="keyword">this</span>.[i]] = <span class="string">"abc"</span>;</span><br><span class="line">            arr.push(<span class="keyword">this</span>[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="错误类型"><a href="#错误类型" class="headerlink" title="错误类型"></a>错误类型</h3><ul>
+<li>Error.name的六种值对应的信息：<ol>
+<li>EvalError : eval()的使用与定义不一致</li>
+<li>RangeError : 数值越界</li>
+<li>ReferenceError : 非法或不能识别的引用数值 (未定义变量等。。)</li>
+<li>SyntaxError : 发生语法解析错误 (低级错误)</li>
+<li>TypeError : 操作数类型错误 (数组操作对象。。)</li>
+<li>URIError : URI处理函数实用不当</li>
+</ol>
+</li>
+</ul>
+<h3 id="es5-0严格模式的启动"><a href="#es5-0严格模式的启动" class="headerlink" title="es5.0严格模式的启动"></a>es5.0严格模式的启动</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="为什么es5的启动方式是字符串，而不是像其他函数？"><a href="#为什么es5的启动方式是字符串，而不是像其他函数？" class="headerlink" title="为什么es5的启动方式是字符串，而不是像其他函数？"></a>为什么es5的启动方式是字符串，而不是像其他函数？</h3><blockquote>
+<p>因为在一些浏览器中，并没有更新到适应es5的环境，所以如果是用函数的方式启动，会在这些浏览器中报错，为了避免这种情况，写成字符串形式，这样不管是新老浏览器不会出错，起到向后兼容的作用。</p>
+</blockquote>
+<h3 id="一些操作元素节点的封装函数"><a href="#一些操作元素节点的封装函数" class="headerlink" title="一些操作元素节点的封装函数"></a>一些操作元素节点的封装函数</h3><h4 id="返回元素elem的第n层祖先元素"><a href="#返回元素elem的第n层祖先元素" class="headerlink" title="返回元素elem的第n层祖先元素"></a>返回元素elem的第n层祖先元素</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">retParent</span>(<span class="params">elem,n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(elem &amp;&amp; n) &#123;</span><br><span class="line">        elem = elem.parentElement;</span><br><span class="line">        n --;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> elem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="封装Haschildren功能，解决以前部分浏览器的兼容性问题"><a href="#封装Haschildren功能，解决以前部分浏览器的兼容性问题" class="headerlink" title="封装Haschildren功能，解决以前部分浏览器的兼容性问题"></a>封装Haschildren功能，解决以前部分浏览器的兼容性问题</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Element.prototype.mHasChildren = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        child = <span class="keyword">this</span>.childNode,</span><br><span class="line">        len = child.length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(child[i].nodeType == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="封装函数，返回元素e的第n个兄弟节点，n为正，返回后面的兄弟节点，n为负，返回前面的，n为0，返回自己。"><a href="#封装函数，返回元素e的第n个兄弟节点，n为正，返回后面的兄弟节点，n为负，返回前面的，n为0，返回自己。" class="headerlink" title="封装函数，返回元素e的第n个兄弟节点，n为正，返回后面的兄弟节点，n为负，返回前面的，n为0，返回自己。"></a>封装函数，返回元素e的第n个兄弟节点，n为正，返回后面的兄弟节点，n为负，返回前面的，n为0，返回自己。</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">retSibling</span>(<span class="params">e,n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(e &amp;&amp; n) &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(e.nextElementSibling)&#123;</span><br><span class="line">                e = e.nextElementSibling;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;<span class="comment">//兼容ie</span></span><br><span class="line">                <span class="keyword">for</span>(e = e.nextSibling; e &amp;&amp; e.nodeType != <span class="number">1</span>; e = e.nextSibling);</span><br><span class="line">            &#125;</span><br><span class="line">            n --;</span><br><span class="line">   		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(e.previousElementSibling)&#123;</span><br><span class="line">                e = e.previousElementSibling;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;<span class="comment">//兼容ie</span></span><br><span class="line">                <span class="keyword">for</span>(e = e.previousSibling; e &amp;&amp; e.nodeType != <span class="number">1</span>; e = e.previousSibling);</span><br><span class="line">            n ++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> e;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="在原型链上封装insertAfter"><a href="#在原型链上封装insertAfter" class="headerlink" title="在原型链上封装insertAfter"></a>在原型链上封装insertAfter</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Element.prototype.insertAfter = <span class="function"><span class="keyword">function</span>(<span class="params">targetNode,afterNode</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> beforeNode = afterNode.nextElementSibling;</span><br><span class="line">    <span class="keyword">if</span>(beforeNode == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.appendChild(targetNode);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.insertBefore(target,beforeNode);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取滚动条x轴与y轴的距离"><a href="#获取滚动条x轴与y轴的距离" class="headerlink" title="获取滚动条x轴与y轴的距离"></a>获取滚动条x轴与y轴的距离</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getScrollOffset</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.pageXOffset) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            x : <span class="built_in">window</span>.pageXOffset,</span><br><span class="line">            y : winodw.pageYOffset</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="comment">//兼容IE之前版本</span></span><br><span class="line">            x : <span class="built_in">document</span>.body.scrollLeft + <span class="built_in">document</span>.documentElement.scrollLeft,</span><br><span class="line">            y : <span class="built_in">document</span>.body.scrollTop + <span class="built_in">document</span>.documentElement.scrollTop</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="怪异模式-混杂模式"><a href="#怪异模式-混杂模式" class="headerlink" title="怪异模式/混杂模式"></a>怪异模式/混杂模式</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>加上<!DOCTYPE html>为标准模式，不加为怪异模式/混杂模式</p>
+<p>怪异模式为了向后（版本）兼容</p>
+</blockquote>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><h4 id="封装兼容性好的添加事件的方法"><a href="#封装兼容性好的添加事件的方法" class="headerlink" title="封装兼容性好的添加事件的方法"></a>封装兼容性好的添加事件的方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addEvent</span>(<span class="params">elem,type,handle</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(elem.addEventListener) &#123;<span class="comment">//通用 IE9以下不兼容</span></span><br><span class="line">        elem.addEventListener(type,handle,<span class="literal">false</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(elem.attachEvent) &#123;<span class="comment">//兼容IE</span></span><br><span class="line">        elem.attachEvent(<span class="string">'on'</span> + type,<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            handle.call(elem);<span class="comment">//this本身指向window，加上call(elem)使this指向elem</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;<span class="comment">//兼容性最好，但一个事件只能绑定一个处理函数（缺陷）</span></span><br><span class="line">        elem[<span class="string">'on'</span> + type] = handle;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="解除事件处理程序"><a href="#解除事件处理程序" class="headerlink" title="解除事件处理程序"></a>解除事件处理程序</h4><ul>
+<li>elem.onclick = false/‘’/null;</li>
+<li>elem.removeEventListener(type,fn,false);</li>
+<li>elem.detachEvent(‘on’+type,fn);</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeEvent</span>(<span class="params">elem,type,handle</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(elem.removeEventListener)&#123;</span><br><span class="line">        elem.removeEventListener(type,handle,<span class="literal">false</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(elem.detachEvent)&#123;</span><br><span class="line">        elem.detachEvent(<span class="string">'on'</span>+type,handle);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        elem[<span class="string">'on'</span>+type] = <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="事件处理模型-事件冒泡，捕获"><a href="#事件处理模型-事件冒泡，捕获" class="headerlink" title="事件处理模型-事件冒泡，捕获"></a>事件处理模型-事件冒泡，捕获</h4><p><strong>事件冒泡：</strong></p>
+<p>结构上（非视觉上）嵌套关系的元素，会存在事件冒泡的功能，即同一事件，自子元素冒泡向父元素。（自底向上）</p>
+<p><strong>事件捕获：</strong></p>
+<p>结构上（非视觉上）嵌套关系的元素，会存在事件捕获的功能，即同一事件，自父元素捕获至子元素（事件源元素）。（自底向上）</p>
+<p><em>IE没有捕获事件</em></p>
+<p><strong>触发顺序，先捕获，后冒泡</strong></p>
+<p>focus，blur，change，submit，reset，select 等事件不冒泡</p>
+<h4 id="封装取消冒泡事件的方法"><a href="#封装取消冒泡事件的方法" class="headerlink" title="封装取消冒泡事件的方法"></a>封装取消冒泡事件的方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stopBubble</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(event.stopPropagation) &#123;</span><br><span class="line">        event.stopPropagation();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        event.cancelBubble = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="阻止默认事件"><a href="#阻止默认事件" class="headerlink" title="阻止默认事件"></a>阻止默认事件</h4><p>默认事件- 表单提交，a标签跳转，右键菜单（oncontextmenu）等</p>
+<ol>
+<li>return false; 以对象属性的方式注册的事件才生效  </li>
+<li>event.preventDefault(); W3C标准，IE9一下不兼容</li>
+<li>event.returnValue = false; 兼容IE</li>
+</ol>
+<h4 id="封装兼容性好的阻止默认事件方法"><a href="#封装兼容性好的阻止默认事件方法" class="headerlink" title="封装兼容性好的阻止默认事件方法"></a>封装兼容性好的阻止默认事件方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cancelHandler</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(event.preventDefault) &#123;</span><br><span class="line">        event.preventDefault();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        event.returnValue = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还能在a标签上写href=”javascript:void(false)”,也能阻止a标签的默认事件。</p>
+<h4 id="事件对象的兼容"><a href="#事件对象的兼容" class="headerlink" title="事件对象的兼容"></a>事件对象的兼容</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> event = e || <span class="built_in">window</span>.event;<span class="comment">//后者兼容IE</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="事件源对象的兼容"><a href="#事件源对象的兼容" class="headerlink" title="事件源对象的兼容"></a>事件源对象的兼容</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> event = e || <span class="built_in">window</span>.event;<span class="comment">//后者兼容IE</span></span><br><span class="line"><span class="keyword">var</span> target = event.target || event.srcElement;<span class="comment">//前者兼容火狐，后者兼容IE</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="事件源对象的应用"><a href="#事件源对象的应用" class="headerlink" title="事件源对象的应用"></a>事件源对象的应用</h4><p>从父级向子级添加事件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> ul = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'ul'</span>)[<span class="number">0</span>];</span></span><br><span class="line"><span class="actionscript">    ul.onclick = <span class="function"><span class="keyword">function</span> <span class="params">(e)</span> </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> event = e || <span class="built_in">window</span>.event;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">var</span> target = event.target || event.srcElement;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(target.innerText);</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="js加载时间线"><a href="#js加载时间线" class="headerlink" title="js加载时间线"></a>js加载时间线</h3><blockquote>
+<p>1、创建Document对象，开始解析web页面。解析HTML元素和他们的文本内容后添加Element对象和Text节点到文档中。<strong>这个阶段document.readyState = ‘loading’。</strong></p>
+</blockquote>
+<blockquote>
+<p>2、遇到link外部css，创建线程加载，并继续解析文档。</p>
+</blockquote>
+<blockquote>
+<p>3、遇到script外部js，并且没有设置async、defer，浏览器加载，并阻塞，等待js加载完成并执行该脚本，然后继续解析文档。</p>
+</blockquote>
+<blockquote>
+<p>4、遇到script外部js，并且设置有async、defer，浏览器创建线程加载，并继续解析文档。对于async属性的脚本，脚本加载完成后立即执行。<strong>（异步禁止使用document.write()）</strong></p>
+</blockquote>
+<blockquote>
+<p>5、遇到img等，先正常解析dom结构，然后浏览器异步加载src，并继续解析文档。</p>
+</blockquote>
+<blockquote>
+<p>6、当文档解析完成，<strong>document.readyState = ‘interactive’。</strong></p>
+</blockquote>
+<blockquote>
+<p>7、文档解析完成后，所有设置有defer的脚本会按照顺序执行。<strong>（注意与async的不同,但同样禁止使用document.write()）;</strong></p>
+</blockquote>
+<blockquote>
+<p>8、document对象触发DOMContentLoaded事件，这也标志着程序执行从同步脚本执行阶段，转化为事件驱动阶段。</p>
+</blockquote>
+<blockquote>
+<p>9、当所有async的脚本加载完成并执行后、img等加载完成后，<strong>document.readyState = ‘complete’，</strong>window对象触发load事件。</p>
+</blockquote>
+<blockquote>
+<p>10、从此，以异步响应方式处理用户输入、网络事件等。</p>
+</blockquote>
+<h4 id="想将script标签写在body前面"><a href="#想将script标签写在body前面" class="headerlink" title="想将script标签写在body前面"></a>想将script标签写在body前面</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'s'</span>);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+
+<p>这样写，让该js执行在解析web页面后，不像window.onload那样等到全部解析完再执行，效率更高。</p>
+<h3 id="JSON，异步加载"><a href="#JSON，异步加载" class="headerlink" title="JSON，异步加载"></a>JSON，异步加载</h3><h4 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h4><blockquote>
+<p>JSON是一种传输数据的格式（以对象为样板，本质上就是对象，但用途有区别，对象就是本地用的，json是用来传输的）</p>
+</blockquote>
+<blockquote>
+<p>JSON.parse(); string-&gt;json</p>
+</blockquote>
+<blockquote>
+<p>JSON.stringify(); json-&gt;string</p>
+</blockquote>
+<h4 id="异步加载"><a href="#异步加载" class="headerlink" title="异步加载"></a>异步加载</h4><ol>
+<li><p>defer异步加载，但要等到DOM文档全部解析完才会被执行。<strong>只有IE能</strong>用，也可以将代码写到内部。</p>
+<script src='' defer='defer'></script>
+</li>
+<li><p>async异步加载，加载完就执行，async只能加载外部脚本，不能把js写在script标签里。</p>
+<script src='' async='async'></script>
+</li>
+<li><p>（<strong>按需加载</strong>）js的加载，不一定要在解析DOM页面时就下载，可以在要用到的时候才下载，这时候可以创建script标签，插入到DOM中去，加载完毕后callback,封装的方法代码如下：</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url,callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    <span class="keyword">if</span>(script.readState) &#123;</span><br><span class="line">        script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="comment">//兼容IE</span></span><br><span class="line">            <span class="keyword">if</span>(script.readState == <span class="string">"complete"</span> || script.readyState == <span class="string">"loaded"</span>) &#123;</span><br><span class="line">                callback();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            callback()</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    script.src = url;</span><br><span class="line">    <span class="built_in">document</span>.head.appendChild(script);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于正常的js文件，js内容如下方法写的话，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">demo</span>(<span class="params"></span>)</span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
+
+<p>像调用上面的（按需加载的）异步加载的话，需要注意callback这个参数，</p>
+<p>如果直接写函数名的话，是不行的，因为在解析的时候，解析loadScript函数的时候，是不会解析里面的内容的，也就是函数体，所以浏览器不知道你这个参数指向的是js文件里的函数，而是会看成一个变量，所以一般像loadScript(‘tools.js’,test);这样的话会报错成test is not defined，为了避免这种情况，有以下几种解决办法</p>
+<ol>
+<li><p>传入参数时，做一些调整。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">loadScript(<span class="string">'tools.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	test();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>这样的话，第二个参数变成了一个函数引用，传入时不会看函数体里的内容，等到执行时才解析，就可以避免test is not defined</p>
+</li>
+<li><p>改变loadScript里的callback的执行方法；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url,callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    <span class="keyword">if</span>(script.readState) &#123;</span><br><span class="line">        script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="comment">//兼容IE</span></span><br><span class="line">            <span class="keyword">if</span>(script.readState == <span class="string">"complete"</span> || script.readyState == <span class="string">"loaded"</span>) &#123;</span><br><span class="line">                <span class="built_in">eval</span>(callback);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">           	<span class="built_in">eval</span>(callback);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    script.src = url;</span><br><span class="line">    <span class="built_in">document</span>.head.appendChild(script);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>传入的callback以字符串的形式加（），</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loadScript(<span class="string">'tools.js'</span>,<span class="string">'test()'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第三种要配合js文件里的内容形式,再改变loadScript里的callback的执行方法</p>
+<p>js文件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> tools = &#123;</span><br><span class="line">    test : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'1'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    demo : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url,callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    <span class="keyword">if</span>(script.readState) &#123;</span><br><span class="line">        script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;<span class="comment">//兼容IE</span></span><br><span class="line">            <span class="keyword">if</span>(script.readState == <span class="string">"complete"</span> || script.readyState == <span class="string">"loaded"</span>) &#123;</span><br><span class="line">                tools[callback]();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">          	 tools[callback]();</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    script.src = url;</span><br><span class="line">    <span class="built_in">document</span>.head.appendChild(script);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>传入的callback以字符串的形式，</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loadScript(<span class="string">'tools.js'</span>,<span class="string">'test'</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+    
+ 
+    
+ 
+</article>
+
+    
+    <article
   id="post-python基础"
   class="article article-type-post"
   itemscope
@@ -397,7 +890,8 @@
 
     
  
-   
+    
+ 
 </article>
 
     
@@ -496,10 +990,6 @@
         <i class="ri-search-line"></i>
       </a>
       
-      
-      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
-        <i class="ri-rss-line"></i>
-      </a>
       
     </li>
   </ul>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-15T17:13:41.699Z</updated>
+  <updated>2020-05-23T14:56:59.756Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,76 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTTP协议</title>
+    <link href="http://yoursite.com/2020/07/27/HTTP%E5%8D%8F%E8%AE%AE/"/>
+    <id>http://yoursite.com/2020/07/27/HTTP%E5%8D%8F%E8%AE%AE/</id>
+    <published>2020-07-27T10:31:35.916Z</published>
+    <updated>2020-05-23T14:56:59.756Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;HTTP协议类&quot;&gt;&lt;a href=&quot;#HTTP协议类&quot; class=&quot;headerlink&quot; title=&quot;HTTP协议类&quot;&gt;&lt;/a&gt;HTTP协议类&lt;/h2&gt;&lt;h3 id=&quot;HTTP协议的主要特点&quot;&gt;&lt;a href=&quot;#HTTP协议的主要特点&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>谈谈CSS盒模型</title>
+    <link href="http://yoursite.com/2020/07/27/%E8%B0%88%E8%B0%88CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://yoursite.com/2020/07/27/%E8%B0%88%E8%B0%88CSS%E7%9B%92%E6%A8%A1%E5%9E%8B/</id>
+    <published>2020-07-27T10:31:05.385Z</published>
+    <updated>2020-05-23T10:20:00.660Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;谈谈你对CSS盒模型的认识&quot;&gt;&lt;a href=&quot;#谈谈你对CSS盒模型的认识&quot; class=&quot;headerlink&quot; title=&quot;谈谈你对CSS盒模型的认识&quot;&gt;&lt;/a&gt;谈谈你对CSS盒模型的认识&lt;/h3&gt;&lt;h4 id=&quot;基本概念&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript笔记</title>
+    <link href="http://yoursite.com/2020/07/27/JavaScript%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2020/07/27/JavaScript%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-07-27T10:30:44.560Z</published>
+    <updated>2020-05-23T09:38:46.788Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;浏览器组成&quot;&gt;&lt;a href=&quot;#浏览器组成&quot; class=&quot;headerlink&quot; title=&quot;浏览器组成&quot;&gt;&lt;/a&gt;浏览器组成&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;1.shell部分&lt;br&gt;2.内核部分&lt;br&gt; 渲染引擎（语法规则和渲染）&lt;br&gt;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>python基础</title>
